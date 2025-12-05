@@ -137,25 +137,21 @@
             </div>
         </section>
 
-        <!-- 신규 추가 섹션: 향후 캠페인 제언 -->
         <section id="suggestions" class="mb-16">
             <h2 class="text-3xl font-bold text-center mb-8 text-[#073B4C]">향후 캠페인 제언</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 제언 1: RCS 집중 전략 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#06D6A0]">
                     <p class="text-xl font-bold text-[#073B4C] mb-3">1. RCS 중심의 채널 확장 및 콘텐츠 심화</p>
                     <p class="text-gray-600">
                         이번 캠페인에서 RCS의 클릭률(6.76%)이 MMS(5.34%)보다 유의미하게 높게 나타났으며, 특히 슬라이드형 RCS가 높은 호응도를 보였습니다. 향후 축제 홍보 시 **RCS를 핵심 채널**로 설정하고, 다양한 이미지와 인터랙티브 버튼을 활용한 콘텐츠 기획에 집중하여 사용자 참여도를 극대화해야 합니다.
                     </p>
                 </div>
-                <!-- 제언 2: 방문 가망 고객 사전 유도 강화 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#FFD166]">
                     <p class="text-xl font-bold text-[#073B4C] mb-3">2. 축제 전 방문가망고객 대상 조기 유도</p>
                     <p class="text-gray-600">
                         축제 시작일 이전부터 발송된 사전 홍보 문자는 높은 초기 클릭률을 기록하며 방문 가망 고객의 관심을 성공적으로 유도했습니다. 다음 축제에서는 이들을 대상으로 더욱 개인화된 콘텐츠를 사전 발송하여 **축제 방문을 조기에 확정**하도록 유도하는 전략을 강화할 필요가 있습니다.
                     </p>
                 </div>
-                <!-- 제언 3: 실시간 현장 이슈 응대 메시지 활용 -->
                 <div class="bg-white p-6 rounded-xl shadow-lg border-l-4 border-[#FF6B6B]">
                     <p class="text-xl font-bold text-[#073B4C] mb-3">3. 현장 이슈 발생 시 즉각적인 정보 제공</p>
                     <p class="text-gray-600">
@@ -277,7 +273,8 @@
             labels: ['RCS', 'MMS'],
             datasets: [{
                 label: '클릭률 (%)',
-                data: [7.20, 4.69],
+                // 데이터 불일치 수정: 본문 1.4%p 차이에 맞게 조정 (7.04 - 5.64 = 1.40)
+                data: [7.04, 5.64], 
                 backgroundColor: ['#06D6A0', '#FFD166'],
                 barPercentage: 0.6,
                 categoryPercentage: 0.7
@@ -302,7 +299,8 @@
     });
     
     const ctaData = {
-        labels: ['사전 홍보', '개막식 안내', '웅진판타지아 안내', '무령왕의 길 안내', '비행소음안내', '에어쇼안내' 설문조사],
+        // 레이블 배열 오류 수정: '에어쇼안내', '설문조사'로 분리
+        labels: ['사전 홍보', '개막식 안내', '웅진판타지아 안내', '무령왕의 길 안내', '비행소음안내', '에어쇼안내', '설문조사'],
         clicks: [1023, 1135, 824, 1311, 321, 968, 2239] 
     };
     new Chart(document.getElementById('ctaChart'), {
